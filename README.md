@@ -5,3 +5,15 @@ First you have to make a webhook in Bitrix24 by going into "Developer resources"
 Then choose form methodes "im.message.add" and save.
 Copy the URL to script in parameter "webhook_url"
 Make a new chat that will be called for ex. "Zabbix"
+
+
+In Zabbix 
+
+Alerts - Media types - Create media type
+
+Select Script
+Script parameters - 
+1. enter you ChatID
+2. {ALERT.MESSAGE}
+
+Also you can config Message Template
