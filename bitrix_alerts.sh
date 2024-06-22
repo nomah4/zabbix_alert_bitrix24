@@ -1,8 +1,8 @@
   GNU nano 5.4                                                                    bitrix_alerts.sh
 #!/bin/bash
 # Parameters
-to=$1 
-body="$2"
+to=$1 # ChatID Bitrix24. Send from Zabbix parametr
+body="$2" # Message to send 
 now=$(date)
 
 # Bitrix24 URL webhook
