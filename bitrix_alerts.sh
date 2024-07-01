@@ -1,4 +1,3 @@
-  GNU nano 5.4                                                                    bitrix_alerts.sh
 #!/bin/bash
 # Parameters
 to=$1 # ChatID Bitrix24. Send from Zabbix parametr
