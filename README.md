@@ -6,6 +6,8 @@ Then choose form methodes "im.message.add" and save.
 Copy the URL to script in parameter "webhook_url"
 Make a new chat that will be called for ex. "Zabbix"
 
+Use jq to make valid message to JSON
+
 
 In Zabbix 
 
