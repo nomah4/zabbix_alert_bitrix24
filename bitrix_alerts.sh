@@ -10,12 +10,12 @@ webhook_url="https://xxxx.bitrix24.pl/rest/85/xxxx/im.message.add.json" #  here 
 
 # Message formating
 message="${body}"
-
+message=$(jq -Rn --arg msg "$message" '$msg')
 # Logging whats send
-echo "[Zabbix Problem]" + "$now" >> /usr/lib/zabbix/alertscripts/problem.txt
+echo "[Zabbix Problem]" "$now" >> /usr/lib/zabbix/alertscripts/problem.txt
 echo "$message" >> /usr/lib/zabbix/alertscripts/problem.txt
 # Sending message to Bitrix24 and logging it in response.txt
 echo "" >> /usr/lib/zabbix/alertscripts/response.txt
 echo "" >> /usr/lib/zabbix/alertscripts/response.txt
 echo "[Bitrix Response] " + "$now" >> /usr/lib/zabbix/alertscripts/response.txt
-curl -X POST -H 'Content-Type: application/json' -d "{\"DIALOG_ID\":\"$to\", \"MESSAGE\":\"$message\"}" $webhook_url >> /usr/lib/zabbix/alertscripts/response.txt
+curl -X POST -H 'Content-Type: application/json' -d "{\"DIALOG_ID\":\"$to\", \"MESSAGE\":$message}" $webhook_url >> /usr/lib/zabbix/alertscripts/response.txt
